@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Raza Jatoi — Math Research Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --paper: #f5f0e8;
+    --cream: #ede7d9;
+    --accent: #c0392b;
+    --accent2: #2c6e8a;
+    --muted: #8a8278;
+    --grid: #d4cfc6;
+    --card: #faf7f2;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* Grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    z-index: 1;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+  .btn-ghost {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-ghost:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
+
+  .hero-formula {
+    position: absolute;
+    right: 48px; bottom: 80px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--grid);
+    line-height: 1.9;
+    text-align: right;
+    user-select: none;
+  }
+
+  /* ── SECTION COMMON ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 56px;
+    color: var(--ink);
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--cream);
+    border-top: 1px solid var(--grid);
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .stat-box {
+    border: 1px solid var(--grid);
+    padding: 20px;
+    background: var(--card);
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .skills-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .skills-list li {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    padding: 12px 18px;
+    border: 1px solid var(--grid);
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .skills-list li::before {
+    content: '∑';
+    color: var(--accent2);
+    font-size: 1rem;
+  }
+
+  /* ── WORKS ── */
+  #works { max-width: 1200px; margin: 0 auto; }
+
+  .works-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .works-header h2 { margin-bottom: 0; }
+
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: 1px solid var(--grid);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+    background: var(--cream);
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+  }
+
+  .work-card {
+    background: var(--card);
+    border: 1px solid var(--grid);
+    padding: 32px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+
+  .work-card:hover::after { width: 100%; }
+  .work-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+
+  .card-type {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-type-icon { font-size: 0.9rem; }
+
+  .card-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .card-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--cream);
+    border: 1px solid var(--grid);
+    color: var(--muted);
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  .card-btn {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+
+  .card-btn:hover { background: var(--ink); color: var(--paper); }
+
+  .card-btn.primary { background: var(--ink); color: var(--paper); }
+  .card-btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+    color: var(--paper);
+    border-top: 2px solid var(--accent);
+  }
+
+  #contact .section-label { color: #e88c85; }
+  #contact .section-label::before { background: #e88c85; }
+  #contact h2 { color: var(--paper); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .contact-info p {
+    color: #b0a898;
+    font-size: 1.02rem;
+    margin-bottom: 36px;
+    line-height: 1.8;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: #c8bfb3;
+  }
+
+  .contact-detail-icon {
+    width: 36px; height: 36px;
+    border: 1px solid #3a3530;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-label {
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6a6058;
+  }
+
+  .form-input, .form-textarea {
+    background: #22201c;
+    border: 1px solid #3a3530;
+    color: var(--paper);
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-input:focus, .form-textarea:focus {
+    border-color: var(--accent2);
+  }
+
+  .form-textarea { min-height: 130px; }
+
+  .form-submit {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: var(--accent);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .form-submit:hover { background: #a93226; transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    background: #110f0c;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: #4a443e;
+  }
+
+  .footer-note {
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    color: #3a3530;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { opacity: 0; }
+  .fade-up.visible {
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { gap: 20px; }
+    section { padding: 72px 24px; }
+    #hero { padding: 100px 24px 60px; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .works-grid { grid-template-columns: 1fr; }
+    .hero-formula { display: none; }
+    footer { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Ali Raza Jatoi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Mathematics &amp; Research</div>
+    <h1>Solving <em>complex</em><br>problems, clearly.</h1>
+    <p class="hero-sub">A portfolio of mathematical research, problem solutions, and academic work — from calculus to abstract proofs.</p>
+    <div class="hero-ctas">
+      <a href="#works" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-formula">
+    ∫₀^∞ e⁻ˣ² dx = √π / 2<br>
+    ∑ₙ₌₁^∞ 1/n² = π²/6<br>
+    e^(iπ) + 1 = 0<br>
+    d/dx[sin x] = cos x<br>
+    P(A|B) = P(B|A)·P(A) / P(B)
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <div class="section-label">About Me</div>
+      <h2>Passion for<br><em>pure reasoning</em></h2>
+      <p>I'm Ali Raza Jatoi, a mathematics researcher focused on making complex problems approachable through clear, structured solutions.</p>
+      <p>My work spans calculus, linear algebra, number theory, and applied mathematics — documented carefully so others can follow and learn.</p>
+      <p>Each piece in this portfolio represents not just an answer, but a journey through the reasoning that leads to it.</p>
+
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Problems solved</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Topics covered</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">PDF</div>
+          <div class="stat-label">All work downloadable</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">Open</div>
+          <div class="stat-label">Free to access</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-up" style="animation-delay:0.15s">
+      <div class="section-label">Areas of Focus</div>
+      <ul class="skills-list">
+        <li>Calculus &amp; Real Analysis</li>
+        <li>Linear Algebra &amp; Matrices</li>
+        <li>Number Theory &amp; Proofs</li>
+        <li>Differential Equations</li>
+        <li>Probability &amp; Statistics</li>
+        <li>Discrete Mathematics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="works-header fade-up">
+    <div>
+      <div class="section-label">Portfolio</div>
+      <h2>My Works</h2>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterWorks('all', this)">All</button>
+      <button class="filter-btn" onclick="filterWorks('pdf', this)">PDF</button>
+      <button class="filter-btn" onclick="filterWorks('image', this)">Images</button>
+      <button class="filter-btn" onclick="filterWorks('video', this)">Videos</button>
+    </div>
+  </div>
+
+  <div class="works-grid" id="works-grid">
+
+    <!-- CARD 1 -->
+    <div class="work-card fade-up" data-type="pdf">
+      <div class="card-type"><span class="card-type-icon">📄</span> PDF · Research</div>
+      <div class="card-title">Integration by Parts: A Complete Guide</div>
+      <p class="card-desc">Detailed walkthrough of integration by parts with 15 solved examples, from basic to advanced applications.</p>
+      <div class="card-tags">
+        <span class="tag">Calculus</span>
+        <span class="tag">Integration</span>
+        <span class="tag">12 pages</span>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn primary">Download PDF</a>
+        <a href="#" class="card-btn">Preview</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="work-card fade-up" data-type="image" style="animation-delay:0.1s">
+      <div class="card-type"><span class="card-type-icon">🖼</span> Image · Visual</div>
+      <div class="card-title">Matrix Transformations — Visual Diagram</div>
+      <p class="card-desc">A visual breakdown of how 2×2 matrices transform 2D space, including rotation, scaling, and shearing.</p>
+      <div class="card-tags">
+        <span class="tag">Linear Algebra</span>
+        <span class="tag">Visualization</span>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn primary">View Full</a>
+        <a href="#" class="card-btn">Download</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="work-card fade-up" data-type="video" style="animation-delay:0.2s">
+      <div class="card-type"><span class="card-type-icon">▶</span> Video · Walkthrough</div>
+      <div class="card-title">Solving a System of Equations — Step by Step</div>
+      <p class="card-desc">15-minute video walkthrough solving a 3-variable system using Gaussian elimination with commentary.</p>
+      <div class="card-tags">
+        <span class="tag">Algebra</span>
+        <span class="tag">15 min</span>
+        <span class="tag">Beginner</span>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn primary">Watch Video</a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="work-card fade-up" data-type="pdf" style="animation-delay:0.1s">
+      <div class="card-type"><span class="card-type-icon">📄</span> PDF · Solutions</div>
+      <div class="card-title">Number Theory: Proofs &amp; Problems</div>
+      <p class="card-desc">10 solved number theory problems including divisibility, modular arithmetic, and prime factorization proofs.</p>
+      <div class="card-tags">
+        <span class="tag">Number Theory</span>
+        <span class="tag">Proofs</span>
+        <span class="tag">Advanced</span>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn primary">Download PDF</a>
+        <a href="#" class="card-btn">Preview</a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="work-card fade-up" data-type="pdf" style="animation-delay:0.2s">
+      <div class="card-type"><span class="card-type-icon">📄</span> PDF · Research</div>
+      <div class="card-title">Probability Distributions Explained</div>
+      <p class="card-desc">Covers normal, binomial, and Poisson distributions with solved exam-style problems and graphical interpretations.</p>
+      <div class="card-tags">
+        <span class="tag">Probability</span>
+        <span class="tag">Statistics</span>
+        <span class="tag">8 pages</span>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn primary">Download PDF</a>
+        <a href="#" class="card-btn">Preview</a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="work-card fade-up" data-type="image" style="animation-delay:0.15s">
+      <div class="card-type"><span class="card-type-icon">🖼</span> Image · Cheat Sheet</div>
+      <div class="card-title">Calculus Formula Sheet</div>
+      <p class="card-desc">A clean, printable formula reference sheet covering derivatives, integrals, limits, and series summaries.</p>
+      <div class="card-tags">
+        <span class="tag">Calculus</span>
+        <span class="tag">Reference</span>
+        <span class="tag">Printable</span>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="card-btn primary">Download</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <div class="section-label">Contact</div>
+      <h2>Let's<br>connect</h2>
+      <p>Have a question about my work, need help with a math problem, or want to collaborate? Feel free to reach out.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉</div>
+        <span>yourname@email.com</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🌐</div>
+        <span>alirazajatoi.com</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <span>Pakistan</span>
+      </div>
+    </div>
+
+    <form class="contact-form fade-up" style="animation-delay:0.1s" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input class="form-input" type="text" placeholder="Full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Your message here..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Ali Raza Jatoi</div>
+  <div class="footer-note">© 2025 · Math Research Portfolio</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Filter works
+  function filterWorks(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.work-card').forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Contact form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#1a7a4a';
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>
