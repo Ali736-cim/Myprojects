@@ -1,0 +1,350 @@
+
+<h2 class="sr-only">ICB crisis behaviour coding table for Serbia across four crisis episodes, 1908 to 1914</h2>
+
+<style>
+  .tbl-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
+  th { background: var(--color-background-secondary); font-weight: 500; font-size: 12px; color: var(--color-text-secondary); text-align: left; padding: 8px 10px; border-bottom: 0.5px solid var(--color-border-primary); position: sticky; top: 0; }
+  td { padding: 7px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; line-height: 1.5; }
+  tr:last-child td { border-bottom: none; }
+  .var-col { width: 110px; font-weight: 500; color: var(--color-text-primary); font-size: 12px; }
+  .ep-col { width: 190px; }
+  .score { display: inline-block; font-weight: 500; font-size: 11px; padding: 2px 7px; border-radius: 4px; margin-bottom: 3px; }
+  .src-tag { display: inline-block; font-size: 10px; padding: 1px 5px; border-radius: 3px; margin-top: 4px; font-weight: 500; }
+  .conf-high { background: #EAF3DE; color: #3B6D11; }
+  .conf-med  { background: #FAEEDA; color: #854F0B; }
+  .conf-low  { background: #FCEBEB; color: #A32D2D; }
+  .s-alb { background: #E6F1FB; color: #185FA5; }
+  .s-cla { background: #EEEDFE; color: #534AB7; }
+  .s-sch { background: #E1F5EE; color: #0F6E56; }
+  .s-hal { background: #FAEEDA; color: #854F0B; }
+  .s-ded { background: #FAECE7; color: #993C1D; }
+  .s-bbd { background: #FBEAF0; color: #993556; }
+  .s-inf { background: #F1EFE8; color: #5F5E5A; }
+  .ep1 { background: #F9F9F9; }
+  .ep2 { background: #F6F8FF; }
+  .ep3 { background: #F6FFF9; }
+  .ep4 { background: #FFF8F6; }
+  .hdr1 { background: #888780; color: #fff; }
+  .hdr2 { background: #378ADD; color: #fff; }
+  .hdr3 { background: #1D9E75; color: #fff; }
+  .hdr4 { background: #D85A30; color: #fff; }
+  .note { font-size: 11px; color: var(--color-text-secondary); margin-top: 3px; }
+  .flag { font-size: 11px; color: var(--color-text-danger); font-style: italic; margin-top: 3px; }
+  .legend-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin: 1rem 0 1.25rem; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--color-text-secondary); }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
+  .section-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 10px 4px; background: var(--color-background-tertiary); border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .conf-legend { margin: 1.25rem 0 0.5rem; font-size: 12px; color: var(--color-text-secondary); }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 8px;">Click any row to expand the source justification. Variables drawn from ICB2 actor-level codebook. Serbia coded as crisis actor in each episode.</p>
+  <div class="legend-wrap">
+    <span style="font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin-right: 4px;">Sources:</span>
+    <span class="legend-item"><span class="legend-swatch s-alb"></span>Albertini vol. 3</span>
+    <span class="legend-item"><span class="legend-swatch s-cla"></span>Clark, Sleepwalkers</span>
+    <span class="legend-item"><span class="legend-swatch s-sch"></span>Schmitt, Annexation of Bosnia</span>
+    <span class="legend-item"><span class="legend-swatch s-hal"></span>Hall, Balkan Wars</span>
+    <span class="legend-item"><span class="legend-swatch s-ded"></span>Dedijer, Road to Sarajevo</span>
+    <span class="legend-item"><span class="legend-swatch s-bbd"></span>Serbian/Austrian Blue &amp; Red Books</span>
+    <span class="legend-item"><span class="legend-swatch s-inf"></span>Inferred / needs Vol. II</span>
+  </div>
+  <div class="conf-legend">Confidence: <span class="src-tag conf-high">high</span> = direct primary source evidence &nbsp; <span class="src-tag conf-med">medium</span> = strong secondary inference &nbsp; <span class="src-tag conf-low">low — needs Vol. II</span></div>
+</div>
+
+<div class="tbl-wrap">
+<table>
+  <colgroup>
+    <col style="width:115px">
+    <col style="width:195px">
+    <col style="width:195px">
+    <col style="width:195px">
+    <col style="width:195px">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>ICB2 variable</th>
+      <th class="hdr1">Episode 1 · Bosnian annexation crisis · Oct 1908 – Mar 1909</th>
+      <th class="hdr2">Episode 2 · First Balkan War · Oct 1912 – May 1913</th>
+      <th class="hdr3">Episode 3 · Second Balkan War + Albanian frontier · Jun – Aug 1913</th>
+      <th class="hdr4">Episode 4 · July Crisis · Jun 28 – Aug 6 1914</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr class="section-label"><td colspan="5">I. Trigger</td></tr>
+
+    <tr id="r-triggr">
+      <td class="var-col">TRIGGR<br><span class="note">what triggered Serbia's crisis</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#E6F1FB;color:#185FA5;">2 — political act</span><br>
+        Austria's annexation announcement of Bosnia-Herzegovina, 5 Oct 1908. Serbia perceived this as a direct political threat to Pan-Serb aspirations and territorial claims.
+        <div class="note"><span class="src-tag s-sch">Schmitt ch. 2</span> <span class="src-tag s-cla">Clark ch. 3</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#E6F1FB;color:#185FA5;">7 — non-violent military act</span><br>
+        Ottoman military concentration following Balkan League mobilisation. Serbia perceived Ottoman force posture as triggering crisis for its territorial ambitions in Macedonia.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 2</span> <span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#E6F1FB;color:#185FA5;">2 — political act</span><br>
+        Great Power ultimatum demanding Serbian withdrawal from Albania (Oct 1913) after Serbian forces occupied Albanian territory. Austria-Hungary's demand backed by threat of force.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 5</span> <span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#FAECE7;color:#993C1D;">6 — internal challenge / 9 — violent act</span><br>
+        Dual trigger: Sarajevo assassination (internal challenge, value=6) perceived by Austria as Serbian state act; then Austrian ultimatum of 23 Jul 1914 (violent threat, value=9). Code as 9 for the critical perception point.
+        <div class="note"><span class="src-tag s-bbd">Serbian Blue Book docs 1–5</span> <span class="src-tag s-ded">Dedijer pt. IV</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+    </tr>
+
+    <tr class="section-label"><td colspan="5">II. Crisis management</td></tr>
+
+    <tr id="r-majres">
+      <td class="var-col">MAJRES<br><span class="note">Serbia's major response</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">3 — political act</span><br>
+        Serbia lodged formal protests, appealed to Russia and Great Powers for support, and demanded territorial compensation. Did not mobilise. Ultimately issued the humiliating declaration of March 1909 accepting the annexation.
+        <div class="note"><span class="src-tag s-sch">Schmitt ch. 4–5</span> <span class="src-tag s-cla">Clark ch. 3</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">7 — multiple including non-violent military</span><br>
+        Serbia mobilised forces as part of Balkan League, combined with diplomatic coordination with Russia and alliance partners. Military action was offensive but directed at Ottoman forces, not a Great Power.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 2–3</span> <span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">3 — political act</span><br>
+        Pašić complied with Great Power ultimatum and withdrew from Albanian territory after initially resisting. Response was diplomatic capitulation under coercive pressure, not military resistance.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 5</span> <span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">7 — multiple including non-violent military</span><br>
+        Serbian reply of 25 July accepted most Austrian demands while rejecting two key sovereignty provisions. Serbia simultaneously mobilised. Pašić sought Greek alliance support (confirmed Albertini vol.3 p.650). Response was mixed diplomatic-military, not pure violence.
+        <div class="note"><span class="src-tag s-bbd">Serbian Blue Book reply 25 Jul</span> <span class="src-tag s-alb">Albertini vol.3 p.650</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+    </tr>
+
+    <tr id="r-crismg">
+      <td class="var-col">CRISMG<br><span class="note">principal crisis management technique</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">4 — multiple not including violence</span><br>
+        Combination of diplomatic protest, Russian mediation appeal, and ultimately verbal submission. No military response mounted despite public rhetoric.
+        <div class="note"><span class="src-tag s-sch">Schmitt</span> <span class="src-tag s-cla">Clark</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">8 — violence</span><br>
+        Military campaign against Ottoman forces was Serbia's primary technique in this episode. Distinct from episode 4 — here violence was directed at a collapsing imperial power, not a Great Power.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 3</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">1 — negotiation / 4 — multiple</span><br>
+        Pašić negotiated under duress with Great Powers over Albanian frontier, ultimately accepting their terms. Code as 4 (multiple non-violent) given the combination of protests, negotiation, and compliance.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 5</span> <span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">7 — multiple including violence</span><br>
+        Serbia combined near-complete diplomatic compliance with simultaneous military mobilisation. Violence followed Austrian declaration of war 28 July, not initiated by Serbia. This is your key variable — Serbia's technique was never pure violence initiation.
+        <div class="note"><span class="src-tag s-bbd">Blue Book / Red Book exchange</span> <span class="src-tag s-inf">Inferred — confirm with Albertini vol. II</span></div>
+        <div><span class="src-tag conf-med">medium — needs Vol. II</span></div>
+      </td>
+    </tr>
+
+    <tr class="section-label"><td colspan="5">III. Gravity and stakes</td></tr>
+
+    <tr id="r-gravty">
+      <td class="var-col">GRAVTY<br><span class="note">gravity of value threatened as perceived by Serbia</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#FAEEDA;color:#854F0B;">3 — territorial threat</span><br>
+        Bosnia-Herzegovina annexation closed Serbian territorial aspirations in the north-west. Threat perceived as territorial and to national aspirations, not existential. Serbia survived and remained independent.
+        <div class="note"><span class="src-tag s-sch">Schmitt</span> <span class="src-tag s-cla">Clark ch. 3</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#FAEEDA;color:#854F0B;">3–4 — territorial / influence</span><br>
+        Macedonia's control was central to Serbian national programme. Threat was territorial gain/loss, not existential. Code as 3 with elements of 4 (influence in Balkans). Serbia was the offensive party.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 1–2</span> <span class="src-tag s-cla">Clark</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#FAEEDA;color:#854F0B;">3 — territorial threat</span><br>
+        Forced withdrawal from Albania was a territorial and prestige setback. Combined with exhaustion from two Balkan Wars, Serbia perceived growing vulnerability to Great Power coercion. Not yet existential.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 5</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#FCEBEB;color:#A32D2D;">5–6 — grave damage / existence</span><br>
+        Austrian ultimatum designed to destroy Serbian sovereignty as a functioning state. Pašić's simultaneous appeal to Greece for support (vol.3 p.650) and dependence on Russian backing (vol.3 p.618) both confirm Serbia perceived existential threat. Code as 5 moving to 6.
+        <div class="note"><span class="src-tag s-alb">Albertini vol.3 pp.618–623, 650</span> <span class="src-tag s-bbd">Serbian Blue Book</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+    </tr>
+
+    <tr class="section-label"><td colspan="5">IV. Decision-making structure</td></tr>
+
+    <tr id="r-strcdu">
+      <td class="var-col">STRCDU<br><span class="note">structure of decisional unit</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">1 — institutional</span><br>
+        Pašić operated through regular cabinet and diplomatic channels. The 1908–09 response was managed through normal governmental institutions despite the crisis severity.
+        <div class="note"><span class="src-tag s-sch">Schmitt ch. 3</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">1 — institutional</span><br>
+        Balkan League coordination was managed through inter-state diplomatic and military channels. War cabinet operated relatively normally given that this was an offensive alliance campaign.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 2</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">3 — combined institutional-ad hoc</span><br>
+        Serbian decision-making under Great Power ultimatum became increasingly Pašić-centred. Cabinet remained but Pašić's personal diplomacy with Russia and the Powers grew dominant. Signs of institutional strain.
+        <div class="note"><span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-low">low — needs Vol. II</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">3 — combined institutional-ad hoc</span><br>
+        Pašić drafted the Serbian reply largely personally. The June 1914 warning about Black Hand officers (documented in secondary literature) was handled outside normal cabinet channels. Key indicator of sovereignty gap.
+        <div class="note"><span class="src-tag s-inf">Needs Albertini vol. II for primary confirmation</span> <span class="src-tag s-cla">Clark ch. 11</span></div>
+        <div><span class="src-tag conf-low">low — needs Vol. II</span></div>
+      </td>
+    </tr>
+
+    <tr id="r-sizedu">
+      <td class="var-col">SIZEDU<br><span class="note">size of decisional unit</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">2 — medium (5–10)</span><br>
+        Regular cabinet deliberation. Foreign minister Milovanović was key alongside Pašić. No evidence of highly restricted decision circle.
+        <div class="note"><span class="src-tag s-sch">Schmitt</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">2 — medium (5–10)</span><br>
+        Alliance coordination required broader decision-making involvement including military command. Not a small personal circle.
+        <div class="note"><span class="src-tag s-hal">Hall</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">1–2 — small to medium</span><br>
+        Great Power pressure meant Pašić increasingly handled responses personally with a small circle. Institutional shrinkage visible but not fully confirmed.
+        <div class="note"><span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-low">low</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">1 — small (1–4)</span><br>
+        Serbian reply drafted by Pašić with minimal cabinet involvement. Albertini vol.3 p.618 shows Pašić conducting bilateral diplomacy directly with Russian representative, bypassing normal channels entirely.
+        <div class="note"><span class="src-tag s-alb">Albertini vol.3 p.618</span> <span class="src-tag s-inf">Confirm with vol. II</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+    </tr>
+
+    <tr id="r-comlev">
+      <td class="var-col">COMLEV<br><span class="note">level of communications</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">3 — foreign minister</span><br>
+        Milovanović as foreign minister conducted most diplomatic communications. Pašić involved but not the sole channel.
+        <div class="note"><span class="src-tag s-sch">Schmitt</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">2 — head of government</span><br>
+        Pašić as Prime Minister was principal communicator in alliance coordination and Russian liaison during the Balkan Wars.
+        <div class="note"><span class="src-tag s-hal">Hall</span> <span class="src-tag s-cla">Clark</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">2 — head of government</span><br>
+        Pašić personally managed withdrawal negotiations under Great Power ultimatum. Foreign minister increasingly sidelined.
+        <div class="note"><span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-med">medium</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#E1F5EE;color:#0F6E56;">2 — head of government</span><br>
+        Pašić conducted all key communications personally — with Strandtmann (Russia), with Greek minister Alexandropulos (Albertini vol.3 p.650), with the Powers. Centralisation complete.
+        <div class="note"><span class="src-tag s-alb">Albertini vol.3 pp.618, 650</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+    </tr>
+
+    <tr class="section-label"><td colspan="5">V. Outcome</td></tr>
+
+    <tr id="r-outcom">
+      <td class="var-col">OUTCOM<br><span class="note">content of outcome for Serbia</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#FCEBEB;color:#A32D2D;">defeat / imposed</span><br>
+        Serbia was forced to issue humiliating declaration accepting annexation. No territorial compensation. Complete diplomatic defeat under German-backed Austrian pressure.
+        <div class="note"><span class="src-tag s-sch">Schmitt ch. 6</span> <span class="src-tag s-cla">Clark ch. 3</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#EAF3DE;color:#3B6D11;">victory / gain</span><br>
+        Serbia doubled its territory through conquest of Macedonia and Kosovo. Major gain by any measure. Only outcome in four episodes where Serbia achieved its objectives.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 4</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#FAEEDA;color:#854F0B;">partial defeat</span><br>
+        Forced withdrawal from Albanian territory but retained Macedonian gains from episode 2. Partial loss — coerced compliance with Great Power demands but not catastrophic.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 5</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#FCEBEB;color:#A32D2D;">catastrophic / war</span><br>
+        Austria declared war 28 July despite Serbian compliance on most points. Outcome was the destruction Serbia had feared — existential military conflict. Pašić's diplomatic strategy failed to avert war.
+        <div class="note"><span class="src-tag s-bbd">Austrian Red Book</span> <span class="src-tag s-alb">Albertini vol.3 passim</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+    </tr>
+
+    <tr id="r-outesr">
+      <td class="var-col">OUTESR<br><span class="note">escalation or reduction of tension after outcome</span></td>
+      <td class="ep1">
+        <span class="score" style="background:#FAEEDA;color:#854F0B;">tension reduced formally, accumulated structurally</span><br>
+        Formal crisis ended but underlying grievances deepened. Black Hand founded 1911 partly as direct response to the humiliation of 1908–09. Tension reduced on surface, stored structurally.
+        <div class="note"><span class="src-tag s-cla">Clark ch. 3–4</span> <span class="src-tag s-ded">Dedijer pt. I</span></div>
+        <div><span class="src-tag conf-high">high — key finding for your argument</span></div>
+      </td>
+      <td class="ep2">
+        <span class="score" style="background:#FAEEDA;color:#854F0B;">tension escalated — new rivalry created</span><br>
+        Serbian victory created new crisis seeds: Bulgarian resentment (Second Balkan War), Albanian question, and Austrian alarm at Serbian power expansion. No stable resolution.
+        <div class="note"><span class="src-tag s-hal">Hall ch. 4</span> <span class="src-tag s-cla">Clark ch. 6</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep3">
+        <span class="score" style="background:#FCEBEB;color:#A32D2D;">tension escalated sharply</span><br>
+        Habsburg frustration at repeated inability to permanently constrain Serbia deepened after 1913. This episode directly fed Austrian conviction that only a definitive confrontation could resolve the Serbian problem.
+        <div class="note"><span class="src-tag s-cla">Clark ch. 7</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+      <td class="ep4">
+        <span class="score" style="background:#FCEBEB;color:#A32D2D;">maximum escalation — general war</span><br>
+        Not applicable as a post-crisis metric — the crisis became the war. The OUTESR variable captures the terminal failure of all four crisis management sequences.
+        <div class="note"><span class="src-tag s-alb">Albertini vol.3 throughout</span></div>
+        <div><span class="src-tag conf-high">high</span></div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<div style="margin: 1.25rem 0 0.5rem; padding: 10px 14px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary);">
+  <p style="font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px;">Key analytical finding from the table</p>
+  <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;">Serbia's MAJRES scores across four episodes are 3 → 7 → 3 → 7. The pattern is reactive, not aggressive: Serbia alternates between political capitulation and combined diplomatic-military response depending on whether it faces a Great Power or a weaker adversary. It never scores 8 (pure violent military initiation) in any episode where the adversary is a Great Power. This is your quantitative weak-state argument.</p>
+</div>
+
+<div style="margin: 0.75rem 0; padding: 10px 14px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); border-left: 3px solid #E24B4A;">
+  <p style="font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px;">Variables needing Albertini Vol. II to confirm</p>
+  <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;">STRCDU (episodes 3–4), SIZEDU (episode 3), CRISMG (episode 4). These require the detailed account of Serbian internal deliberations in late July 1914. All other variables are confirmable from sources already in hand.</p>
+</div>
